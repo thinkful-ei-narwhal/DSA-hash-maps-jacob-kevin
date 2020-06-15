@@ -97,5 +97,38 @@ const checkPalindrome = (string) => {
     return false
 }
 
-console.log(checkPalindrome('true')); // -> true
+// console.log(checkPalindrome('true')); // -> true
 
+//Question 6-------------------------------------------------------------------------------------------
+//sorting the letters in each string alpha
+//for each set of char, create a key: value where the value is an array with index of each instance of the set of letters
+//iterate through the hashmap, printing out the words at each index of the array;
+const anagramGrouper = (stringArray) => {
+    const stringHash = new HashMap();
+    let arrCopy = stringArray;
+    const keys = [];
+    for (let i = 0; i < arrCopy.length; i++) {
+        let currSet = arrCopy[i].split('').sort().join('');
+        try {
+            let newArr = stringHash.get(currSet);
+            newArr.push(i);
+            stringHash.set(currSet, newArr)
+        }
+        catch {
+            stringHash.set(currSet, [i])
+            keys.push(currSet)
+        }
+    }
+    let sortedWords = [];
+    for (let j = 0; j < keys.length; j++) {
+        let indexes = stringHash.get(keys[j]);
+        let grouping = [];
+        for (let k = 0; k < indexes.length; k++) {
+            grouping.push(stringArray[indexes[k]])
+        }
+        sortedWords.push(grouping);
+    }
+    console.log(sortedWords);
+}
+
+anagramGrouper(['east', 'cars', 'acre', 'arcs', 'teas', 'eats', 'race']);
