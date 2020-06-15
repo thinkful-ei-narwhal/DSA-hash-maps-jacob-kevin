@@ -16,9 +16,11 @@ function main() {
     newHash.set("person", "jacob")
     newHash.set("dog", "max")
     newHash.set("lizard", "alex")
+    newHash.set("lizard")
+
     // console.log(JSON.stringify(newHash))
     // console.log(newHash)
-    console.log(newHash.get('Hobbit'))
+    console.log(newHash.get('lizard'))
     // console.log(newHash.MAX_LOAD_RATIO)
 }
 
