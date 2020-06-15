@@ -83,6 +83,7 @@ class HashMap {
         }
     }
 }
+
 HashMap.SIZE_RATIO = 3;
 HashMap.MAX_LOAD_RATIO = .5;
 
