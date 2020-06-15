@@ -1,9 +1,10 @@
 const HashMap = require('./hashmaps');
+const HashMapWithChain = require('./hashmapwithchain');
 
 
 //Question 1-------------------------------------------------------------------------------------------
 function main() {
-  const newHash = new HashMap;
+  const newHash = new HashMapWithChain();
 
   newHash.set('Hobbit', 'Bilbo');
   newHash.set('Hobbit', 'Frodo');
@@ -12,17 +13,18 @@ function main() {
   newHash.set('Maiar', 'Sauron');
   newHash.set('RingBearer', 'Gollum');
   newHash.set('HalfElven', 'Arwen');
-  newHash.set('Ent', 'treeBeard');
+  newHash.set('Ent', 'kevin');
   newHash.set('person', 'jacob');
   newHash.set('dog', 'max');
   newHash.set('lizard', 'alex');
   // console.log(JSON.stringify(newHash))
   // console.log(newHash)
-  console.log(newHash.get('Hobbit'));
+  console.log(newHash);
+ 
   // console.log(newHash.MAX_LOAD_RATIO)
 }
 
-// main();
+main();
 
 //Question 2-------------------------------------------------------------------------------------------
 //This creates two hash maps, each with two key-value pairs.
@@ -131,4 +133,4 @@ const anagramGrouper = (stringArray) => {
     console.log(sortedWords);
 }
 
-anagramGrouper(['east', 'cars', 'acre', 'arcs', 'teas', 'eats', 'race']);
+// anagramGrouper(['east', 'cars', 'acre', 'arcs', 'teas', 'eats', 'race']);

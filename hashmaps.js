@@ -1,3 +1,6 @@
+//if two keys are the same -> instead of replacing the old one
+//create an array with all the values with the same key
+
 class HashMap {
   constructor(initialCapacity = 8) {
     this.length = 0;
